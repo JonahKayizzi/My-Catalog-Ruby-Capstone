@@ -48,9 +48,9 @@ class App
       show_interactive_console
       option = gets.chomp.to_i
       option = ACTIONS[option]
-      if option == :exit
-        break
-      elsif option
+      break if option == :exit
+
+      if option
         send(option)
       else
         puts 'That is not a valid input'
