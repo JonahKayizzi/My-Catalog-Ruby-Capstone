@@ -1,6 +1,10 @@
 class Item
   attr_accessor :id, :genre, :author, :source, :label, :publish_date, :archived
 
+  # I believe there is alot of unnecessary arguments
+  # I believe that the arguments required are (publish_date, archived, id: nil)
+
+  # I believe that the archived var should be in the init arguments
   def initialize(id, genre, author, source, label, publish_date)
     @id = id
     @genre = genre
