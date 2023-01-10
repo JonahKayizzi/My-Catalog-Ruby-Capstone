@@ -14,11 +14,6 @@ class Item
     @archived = false
   end
 
-  def add_genre(genre)
-    new_genre = Genre.new(id, name, items)
-    @genre << new_genre
-  end
-
   def can_be_archived?
     (Date.today - publish_date) > 10
   end
