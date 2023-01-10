@@ -9,6 +9,22 @@ class App
   authors = {}
   sources = {}
 
+  ACTIONS = {
+    1 => :list_books,
+    2 => :list_music_albums,
+    3 => :list_movies,
+    4 => :list_games,
+    5 => :list_genres,
+    6 => :list_labels,
+    7 => :list_authors,
+    8 => :list_sources,
+    9 => :add_a_book,
+    10 => :add_a_music_album,
+    11 => :add_a_movie,
+    12 => :add_a_game,
+    0 => :exit
+  }.freeze
+
   def show_interactive_console
     puts ''
     puts 'Please choose an option by entering a number:'
@@ -28,39 +44,16 @@ class App
   end
 
   def run
-    while true do
+    loop do
       show_interactive_console
       option = gets.chomp.to_i
-      case option
-      when 1
-        list_items(books, "books")
-      when 2
-        list_items(music_albums, "music albums")
-      when 3
-        list_items(movies, "movies")
-      when 4
-        list_items(games, "games")
-      when 5
-        list_items(genres, "genres")
-      when 6
-        list_items(labels, "labels")
-      when 7
-        list_items(authors, "authors")
-      when 8
-        list_items(sources, "sources")
-      when 9
-        add_item(books, "book")
-      when 10
-        add_item(music_albums, "music album")
-      when 11
-        add_item(movies, "movie")
-      when 12
-        add_item(games, "game")
-      when 13
-        puts "Quitting the app..."
+      option = ACTIONS[option]
+      if option == :exit
         break
+      elsif option
+        send(option)
       else
-        puts "Invalid option. Please try again."
+        puts 'That is not a valid input'
       end
     end
   end
