@@ -1,13 +1,13 @@
 class App
   # Define collections
-  books = {}
-  music_albums = {}
-  movies = {}
-  games = {}
-  genres = {}
-  labels = {}
-  authors = {}
-  sources = {}
+  # books = {}
+  # music_albums = {}
+  # movies = {}
+  # games = {}
+  # genres = {}
+  # labels = {}
+  # authors = {}
+  # sources = {}
 
   ACTIONS = {
     1 => :list_books,
