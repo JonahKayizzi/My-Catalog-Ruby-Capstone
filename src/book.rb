@@ -1,7 +1,7 @@
 require './item'
 
 class Book < Item
-    attr_accessor :author, :genre
+    attr_accessor :publisher, :cover_state
     
     def initialize(publisher, cover_state)
         super()
@@ -9,7 +9,7 @@ class Book < Item
         @cover_state = cover_state
     end
 
-    def can_be_archived?
-        @cover_state == 'bad'
+    def can_be_archived?()
+        super || @cover_state == 'bad'
     end
 end
