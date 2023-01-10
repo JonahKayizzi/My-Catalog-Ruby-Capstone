@@ -1,12 +1,12 @@
 require_relative 'item'
 
-class MusicAlbum < Item
+class Music_album < Item
   attr_accessor :on_spotify
 
   def initialize(_publish_date, _archived, on_spotify)
     # super(id, genre, author, source, label, publish_date)
     # here I am sending this unnecessary agruments
-    super()
+    super(_publish_date, _archived)
     @on_spotify = on_spotify
   end
 
