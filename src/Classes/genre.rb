@@ -1,8 +1,8 @@
 class Genre
   attr_accessor :id, :name, :items
 
-  def initialize(id, name)
-    @id = id
+  def initialize(name)
+    @id = rand(1..1000)
     @name = name
     @items = []
   end

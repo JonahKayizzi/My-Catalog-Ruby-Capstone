@@ -4,6 +4,7 @@ require_relative './app'
 require_relative './Classes/music_album'
 require_relative './Classes/genre'
 require_relative './modules/preserve_module'
+require_relative './modules/music_module'
 require_relative './modules/game_module'
 require_relative './modules/book_module'
 require_relative 'Classes/book'
@@ -12,6 +13,7 @@ require_relative 'Classes/label'
 class App
   include GameModule
   include BookModule
+  include Musicalbum
   def initialize
     @response = 0
     @music_albums = []
@@ -63,13 +65,13 @@ class App
     when 1
       list_books
     when 2
-      # list_music_albums
+      list_music_albums
     when 3
       # list_movies
     when 4
       list_games
     when 5
-      # list_genres
+      list_genres
     when 6
       list_labels
     when 7
@@ -86,7 +88,7 @@ class App
     when 9
       add_book
     when 10
-      # add_music_album
+      add_music_album
     when 11
       # add_movie
     when 12

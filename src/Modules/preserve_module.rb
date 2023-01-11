@@ -25,7 +25,7 @@ module Preserve
   end
 
   def load_games
-    fetch_file('games').map { |game| Game.new(game['publish_date'], game['multiplayer'], game['last_played']) }
+    fetch_file('games').map { |album| Game.new(album['publish_date'], album['multiplayer'], album['last_played']) }
   end
 
   def load_author

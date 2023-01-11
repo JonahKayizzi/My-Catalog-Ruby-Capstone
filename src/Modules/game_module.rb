@@ -15,12 +15,12 @@ module GameModule
     print 'When was it last played at? '
     last_played_at = gets.chomp
 
-    game = Game.new(published_date, multiplayer, last_played_at)
+    album = Game.new(published_date, multiplayer, last_played_at)
     game_data = { publish_date: published_date, multiplayer: multiplayer, last_played: last_played_at }
     stored_data = fetch_file('games')
     stored_data.push(game_data)
     update_data('games', stored_data)
-    @games << game
+    @games << album
 
     add_list('author')
     list_authors
@@ -31,7 +31,7 @@ module GameModule
       print 'ID of the source: '
       id_author = gets.chomp.to_i
       @author.each do |author|
-        game.add_author(author) if author.id == id_author
+        album.add_author(author) if author.id == id_author
       end
     else
       puts 'First Name: '
@@ -45,7 +45,7 @@ module GameModule
       stored_data.push(author_data)
       update_data('authors', stored_data)
       @author << author
-      author.add_item(game)
+      author.add_item(album)
     end
   end
 
