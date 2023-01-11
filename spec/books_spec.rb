@@ -1,5 +1,5 @@
-require_relative '../src/label'
 require_relative '../src/book'
+require 'date'
 
 describe Book do
     let (:book) { Book.new('Mc Milan', 'good') }
@@ -10,11 +10,11 @@ describe Book do
         end
 
         it 'has a title' do
-            expect(book.title).to eq('The Hobbit')
+            expect(book.publisher).to eq('Mc Milan')
         end
 
-        it 'has an author' do
-            expect(book.author).to eq('J.R.R. Tolkien')
+        it 'has a cover state' do
+            expect(book.cover_state).to eq('good')
         end
     end
 end
