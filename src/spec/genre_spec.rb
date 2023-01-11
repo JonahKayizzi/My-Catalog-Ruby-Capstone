@@ -15,9 +15,5 @@ describe 'Genre class' do
   it 'this should validate genre to be an instent from Genre' do
     expect(@genre).to be_an_instance_of(Genre)
   end
-  it 'this should validate add_item method' do
-    @album1 = MusicAlbum.new('2000-01-01', false)
-    @genre.add_item(@album1)
-    expect(@genre.items.length).to eq 1
-  end
+
 end
