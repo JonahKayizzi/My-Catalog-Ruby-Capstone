@@ -19,13 +19,13 @@ describe Label do
 
     context '#add_item' do
         it 'adds an item to the list of items' do
-            book = Book.new('The Hobbit', 'good')
+            book = Book.new('2000-01-01', 'The Hobbit', 'good')
             label.add_item(book)
             expect(label.items).to eq([book])
         end
 
         it 'adds the label to the label property of the item' do
-            book = Book.new('The Hobbit', 'good')
+            book = Book.new('2000-01-01', 'The Hobbit', 'good')
             label.add_item(book)
             expect(book.label).to eq(label)
         end
