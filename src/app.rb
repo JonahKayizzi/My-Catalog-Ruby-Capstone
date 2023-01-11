@@ -5,15 +5,21 @@ require_relative './Classes/music_album'
 require_relative './Classes/genre'
 require_relative './modules/preserve_module'
 require_relative './modules/game_module'
+require_relative './modules/book_module'
+require_relative 'Classes/book'
+require_relative 'Classes/label'
 
 class App
   include GameModule
+  include BookModule
   def initialize
     @response = 0
     @music_albums = []
     @games = load_games
     @author = load_author
     @genres = []
+    @books = []
+    @labels = []
 
     load_games
   end
@@ -55,7 +61,7 @@ class App
   def list_items
     case @response
     when 1
-      # list_books
+      list_books
     when 2
       # list_music_albums
     when 3
@@ -65,11 +71,11 @@ class App
     when 5
       # list_genres
     when 6
-      # list_labels
+      list_labels
     when 7
       list_authors
     when 8
-      list_source
+      # list_source
     else
       puts 'Invalid input'
     end
@@ -78,7 +84,7 @@ class App
   def add_item
     case @response
     when 9
-      # add_book
+      add_book
     when 10
       # add_music_album
     when 11
