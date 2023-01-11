@@ -9,8 +9,7 @@ CREATE TABLE item(
     FOREIGN KEY (genre_id) REFERENCES genre (id) ON DELETE RESTRICT ON UPDATE CASCADE,
     FOREIGN KEY (label_id) REFERENCES labels (id) ON DELETE RESTRICT ON UPDATE CASCADE,
     FOREIGN KEY (id) REFERENCES item (id) ON DELETE RESTRICT ON UPDATE CASCADE
-    -- for the author relation uncomment the line below
-    -- FOREIGN KEY (author_id) REFERENCES author (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+    FOREIGN KEY (author_id) REFERENCES author (id) ON DELETE RESTRICT ON UPDATE CASCADE,
 );
 CREATE TABLE books(
     id SERIAL PRIMARY KEY,
@@ -35,4 +34,18 @@ CREATE TABLE genre(
 CREATE TABLE music_album(
     id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     on_spotify BOOLEAN,
+
+CREATE TABLE game (
+    id SERIAL NOT NULL PRIMARY KEY,
+    multiplayer BOOLEAN,
+    last_played_at DATE,
+    publish_date DATE,
+    archived BOOLEAN,
+    author_id INTEGER REFERENCES author (id)
+);
+
+CREATE TABLE author (
+    id SERIAL NOT NULL PRIMARY KEY,
+    first_name VARCHAR,
+    last_name VARCHAR
 );
