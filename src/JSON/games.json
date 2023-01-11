@@ -1,0 +1,22 @@
+[
+  {
+    "publish_date" : "1992",
+    "multiplayer" : true,
+    "last_played" : "2004"
+  },
+  {
+    "publish_date" : "2016",
+    "multiplayer" : true,
+    "last_played" : "2022"
+  },
+  {
+    "publish_date" : "1993",
+    "multiplayer" : false,
+    "last_played" : "2001"
+  },
+  {
+    "publish_date" : "2003",
+    "multiplayer" : true,
+    "last_played" : "2011"
+  }
+]
