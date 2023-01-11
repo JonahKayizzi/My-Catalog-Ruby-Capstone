@@ -16,10 +16,10 @@ class App
   include Musicalbum
   def initialize
     @response = 0
-    @music_albums = []
+    @music_albums = load_music_albums
     @games = load_games
     @author = load_author
-    @genres = []
+    @genres = load_genre
     @books = load_books
     @labels = load_labels
 
