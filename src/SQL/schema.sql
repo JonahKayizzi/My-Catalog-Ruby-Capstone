@@ -1,15 +1,15 @@
 CREATE TABLE books(
-    id INT GENERATED ALWAYS AS IDENTITY,
-    publisher VARCHAR(50),
-    publish_date DATE,
-    cover_state VARCHAR(50),
+    id SERIAL PRIMARY KEY,
+    publisher VARCHAR(50) NOT NULL,
+    publish_date DATE NOT NULL,
+    cover_state VARCHAR(50) NOT NULL,
     archived BOOLEAN,
     label_id INT NOT NULL REFERENCES labels(id) ON DELETE CASCADE,
     PRIMARY KEY(id)
 );
 CREATE TABLE labels(
-    id INT GENERATED ALWAYS AS IDENTITY,
-    title VARCHAR(50),
-    color VARCHAR(50),
+    id SERIAL PRIMARY KEY,
+    title VARCHAR(50) NOT NULL,
+    color VARCHAR(50) NOT NULL,
     PRIMARY KEY(id)
 );
