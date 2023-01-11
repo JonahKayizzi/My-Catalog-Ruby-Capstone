@@ -35,9 +35,11 @@ module Preserve
   def load_books
     fetch_file('books').map { |book| Book.new(book['publish_date'], book['publisher'], book['cover_state']) }
   end
+
   def load_music_albums
-    fetch_file('music_albums').map { |album| MusicAlbum.new(album['on_spotify'], album['publish_date'])}
+    fetch_file('music_albums').map { |album| MusicAlbum.new(album['on_spotify'], album['publish_date']) }
   end
+
   def load_genre
     fetch_file('genre').map { |genre| Genre.new(genre['name']) }
   end

@@ -13,7 +13,7 @@ module Musicalbum
     puts 'Please Enter the date'
     date = gets.chomp
     music_album = MusicAlbum.new(on_spotify, date)
-    music_data = {publish_date: date, on_spotify: on_spotify}
+    music_data = { publish_date: date, on_spotify: on_spotify }
     stored_data = fetch_file('music_albums')
     stored_data.push(music_data)
     update_data('music_albums', stored_data)
@@ -36,7 +36,7 @@ module Musicalbum
       # create a genre object
       genre = Genre.new(genre_name)
       # save the genre
-      genre_data = {name: genre_name, id: genre.id}
+      genre_data = { name: genre_name, id: genre.id }
       stored_data = fetch_file('genre')
       stored_data.push(genre_data)
       update_data('genre', stored_data)
