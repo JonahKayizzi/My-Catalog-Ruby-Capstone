@@ -23,3 +23,8 @@ CREATE TABLE game (
     author_id INTEGER REFERENCES author (id)
 );
 
+CREATE TABLE author (
+    id SERIAL NOT NULL PRIMARY KEY,
+    first_name VARCHAR,
+    last_name VARCHAR
+);
