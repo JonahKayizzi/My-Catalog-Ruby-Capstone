@@ -1,5 +1,5 @@
-require_relative '../src/item'
-require_relative '../src/genre'
+require_relative '../Classes/music_album'
+require_relative '../Classes/genre'
 
 describe 'Genre class' do
   before :each do
@@ -16,8 +16,8 @@ describe 'Genre class' do
     expect(@genre).to be_an_instance_of(Genre)
   end
   it 'this should validate add_item method' do
-    @item = Item.new('2000-01-01', false)
-    @genre.add_item(@item)
+    @album1 = MusicAlbum.new('2000-01-01', false)
+    @genre.add_item(@album1)
     expect(@genre.items.length).to eq 1
   end
 end
