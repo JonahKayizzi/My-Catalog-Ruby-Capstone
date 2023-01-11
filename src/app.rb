@@ -1,60 +1,96 @@
+# rubocop:disable Metrics/CyclomaticComplexity
+
+require_relative './app'
+require_relative './Classes/music_album'
+require_relative './Classes/genre'
+require_relative './modules/preserve_module'
+require_relative './modules/game_module'
+
 class App
-  # Define collections
-  # books = {}
-  # music_albums = {}
-  # movies = {}
-  # games = {}
-  # genres = {}
-  # labels = {}
-  # authors = {}
-  # sources = {}
+  include GameModule
+  def initialize
+    @response = 0
+    @music_albums = []
+    @games = load_games
+    @author = load_author
+    @genres = []
 
-  ACTIONS = {
-    1 => :list_books,
-    2 => :list_music_albums,
-    3 => :list_movies,
-    4 => :list_games,
-    5 => :list_genres,
-    6 => :list_labels,
-    7 => :list_authors,
-    8 => :list_sources,
-    9 => :add_a_book,
-    10 => :add_a_music_album,
-    11 => :add_a_movie,
-    12 => :add_a_game,
-    0 => :exit
-  }.freeze
-
-  def show_interactive_console
-    puts ''
-    puts 'Please choose an option by entering a number:'
-    puts '1. List all books'
-    puts '2. List all music albums'
-    puts '3. List all movies'
-    puts '4. List all games'
-    puts '5. List all genres'
-    puts '6. List all labels'
-    puts '7. List all authors'
-    puts '8. List all sources'
-    puts '9. Add a book'
-    puts '10. Add a music album'
-    puts '11. Add a movie'
-    puts '12. Add a game'
-    puts '0 - Exit'
+    load_games
   end
 
   def run
-    loop do
-      show_interactive_console
-      option = gets.chomp.to_i
-      option = ACTIONS[option]
-      break if option == :exit
-
-      if option
-        send(option)
-      else
-        puts 'That is not a valid input'
-      end
+    puts 'Welcome to My catalog of things'
+    while @response != 13
+      puts(
+        'Select a number to start an action:
+          1 - List all books
+          2 - List all music albums
+          3 - List all movies
+          4 - List of games
+          5 - List all genres
+          6 - List all labels
+          7 - List all authors
+          8 - List all sources
+          9 - Add a book
+          10 - Add a music album
+          11 - Add a movie
+          12 - Add a game
+          13 - Exit'
+      )
+      start_up
     end
   end
+
+  def start_up
+    @response = gets.chomp.to_i
+    if @response >= 1 && @response <= 8
+      list_items
+    else
+      add_item
+    end
+    # store_books(@books)
+    # store_labels(@labels)
+  end
+
+  def list_items
+    case @response
+    when 1
+      # list_books
+    when 2
+      # list_music_albums
+    when 3
+      # list_movies
+    when 4
+      list_games
+    when 5
+      # list_genres
+    when 6
+      # list_labels
+    when 7
+      list_authors
+    when 8
+      list_source
+    else
+      puts 'Invalid input'
+    end
+  end
+
+  def add_item
+    case @response
+    when 9
+      # add_book
+    when 10
+      # add_music_album
+    when 11
+      # add_movie
+    when 12
+      add_game
+    end
+  end
+
+  def user_input(message)
+    print message
+    gets.chomp
+  end
 end
+# rubocop:enable Metrics/CyclomaticComplexity
