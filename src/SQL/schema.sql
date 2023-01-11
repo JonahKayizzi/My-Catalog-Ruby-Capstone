@@ -13,3 +13,13 @@ CREATE TABLE labels(
     color VARCHAR(50) NOT NULL,
     PRIMARY KEY(id)
 );
+
+CREATE TABLE game (
+    id SERIAL NOT NULL PRIMARY KEY,
+    multiplayer BOOLEAN,
+    last_played_at DATE,
+    publish_date DATE,
+    archived BOOLEAN,
+    author_id INTEGER REFERENCES author (id)
+);
+
