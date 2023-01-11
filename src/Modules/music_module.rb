@@ -34,7 +34,13 @@ def list_music_albums
     @music_albums.each_with_index do |album, index|
         message = 'it is not on spotify'
         message = 'it is on spotify' if album.on_spotify
-        puts "#{index + 1}) Name: #{album.name}, Publish date: #{album.publish_date}, #{message}"
+        puts "#{index + 1}), Publish date: #{album.publish_date}, #{message}"
     end
 end
 end
+    def list_genres
+        return puts 'No authors found' if @genres.empty?
+        @genres.each_with_index do |genre, index|
+            puts "#{index + 1}) Name: #{genre.name}, ID: #{genre.id}"
+        end
+    end

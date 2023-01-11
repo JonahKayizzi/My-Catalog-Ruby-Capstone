@@ -71,7 +71,7 @@ class App
     when 4
       list_games
     when 5
-      # list_genres
+      list_genres
     when 6
       list_labels
     when 7
