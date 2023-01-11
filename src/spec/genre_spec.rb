@@ -15,5 +15,4 @@ describe 'Genre class' do
   it 'this should validate genre to be an instent from Genre' do
     expect(@genre).to be_an_instance_of(Genre)
   end
-
 end
