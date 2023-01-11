@@ -2,7 +2,7 @@ require_relative '../Classes/author'
 require 'json'
 
 module Preserve
-  attr_accessor :games, :movies, :author, :source
+  attr_accessor :games, :movies, :author, :source, :books, :labels
 
   def fetch_file(file)
     file_path = "./JSON/#{file}.json"
@@ -30,5 +30,13 @@ module Preserve
 
   def load_author
     fetch_file('authors').map { |author| Author.new(author['first_name'], author['last_name']) }
+  end
+
+  def load_books
+    fetch_file('books').map { |book| Book.new(book['publish_date'], book['publisher'], book['cover_state']) }
+  end
+
+  def load_labels
+    fetch_file('labels').map { |label| Label.new(label['title'], label['color']) }
   end
 end

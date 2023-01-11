@@ -20,9 +20,10 @@ class App
     @games = load_games
     @author = load_author
     @genres = []
-    @books = []
-    @labels = []
+    @books = load_books
+    @labels = load_labels
 
+    load_books
     load_games
   end
 
@@ -56,8 +57,6 @@ class App
     else
       add_item
     end
-    # store_books(@books)
-    # store_labels(@labels)
   end
 
   def list_items
