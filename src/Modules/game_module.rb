@@ -52,7 +52,7 @@ module GameModule
   def list_games
     puts 'No available games' if @games.empty?
 
-    @games.each_with_index do |album, index|
+    @games.each_with_index do |game, index|
       puts "#{index + 1}) Publish date: #{game.publish_date}, Last played: #{game.last_played_at},
       Multiplayer: #{game.multiplayer}"
     end
