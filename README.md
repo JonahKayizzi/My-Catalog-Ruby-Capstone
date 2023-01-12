@@ -104,7 +104,7 @@ Example commands:
 
   git clone https://github.com/JonahKayizzi/My-Catalog-Ruby-Capstone.git
   cd My-Catalog-Ruby-Capstone
- 
+
 ### Usage
 
  ### Run
@@ -145,6 +145,11 @@ Example commands:
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
+
+- Automatic data retrieval from online sources
+- Cloud synchronization, allowing users to access their inventory from multiple devices and automatically keep their data up-to-date across devices.
+- Customizable categories and fields, allowing users to add and track additional information about their items.
+- Multi-language support, allowing users to use the app in different languages.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
