@@ -17,6 +17,7 @@ A console app to help you keep a record of different things you own such as book
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
     - [Key Features ](#key-features-)
+  - [🚀 Live Demo ](#-live-demo-)
     - [Getting Started ](#getting-started-)
     - [Prerequisites](#prerequisites)
     - [Setup](#setup)
@@ -80,7 +81,7 @@ A console app to help you keep a record of different things you own such as book
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Presentation Video](https://youtu.be/Kc4yKM056tE)
+- [Presentation Video](https://drive.google.com/file/d/1bG6yH-VGRvc4p0TU0G2R8MxgohzVhehx/view?usp=sharing)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
