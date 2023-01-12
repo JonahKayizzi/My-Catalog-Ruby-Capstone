@@ -1,0 +1,32 @@
+[
+  {
+    "publish_date" : "2022-01-01",
+    "publisher" : "MK",
+    "cover_state" : "good"
+  },
+  {
+    "publish_date" : "2023-03-05",
+    "publisher" : "Longman",
+    "cover_state" : "bad"
+  },
+  {
+    "publish_date" : "2017-09-09",
+    "publisher" : "MacMilan",
+    "cover_state" : "good"
+  },
+  {
+    "publish_date" : "2019",
+    "publisher" : "J.K Rowling",
+    "cover_state" : "bad"
+  },
+  {
+    "publish_date" : "2018",
+    "publisher" : "J.K. Rowling",
+    "cover_state" : "bad"
+  },
+  {
+    "publish_date" : "2016",
+    "publisher" : "J.K. Rowling",
+    "cover_state" : "bad"
+  }
+]
