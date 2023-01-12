@@ -34,15 +34,15 @@ class App
         'Select a number to start an action:
           1 - List all books
           2 - List all music albums
-          3 - List all movies
+          3 - List all movies - Unavailable
           4 - List of games
           5 - List all genres
           6 - List all labels
           7 - List all authors
-          8 - List all sources
+          8 - List all sources - Unavailable
           9 - Add a book
           10 - Add a music album
-          11 - Add a movie
+          11 - Add a movie - Unavailable
           12 - Add a game
           13 - Exit'
       )
