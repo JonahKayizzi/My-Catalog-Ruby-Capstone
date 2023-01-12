@@ -8,7 +8,6 @@ describe 'Genre class' do
 
   it 'this should validate genre id is an integer' do
     expect(@genre.id).to be_kind_of(Integer)
-
   end
   it 'this should validate genre name' do
     expect(@genre.name).to eq 'soft_pop'
