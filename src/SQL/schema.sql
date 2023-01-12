@@ -1,38 +1,56 @@
 CREATE TABLE item(
-    id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    publish_date DATE,
-    archived BOOLEAN,
-    archived BOOLEAN,
-    genre_id INT,
+  id SERIAL PRIMARY KEY,
+  publish_date DATE,
+  archived BOOLEAN,
+  archived BOOLEAN,
+  genre_id INT,
 	author_id INT,
 	label_id INT,
-    FOREIGN KEY (genre_id) REFERENCES genre (id) ON DELETE RESTRICT ON UPDATE CASCADE,
-    FOREIGN KEY (label_id) REFERENCES labels (id) ON DELETE RESTRICT ON UPDATE CASCADE,
-    FOREIGN KEY (author_id) REFERENCES author (id) ON DELETE RESTRICT ON UPDATE CASCADE,
+  FOREIGN KEY (genre_id) REFERENCES genre (id),
+  FOREIGN KEY (label_id) REFERENCES label (id),
+  FOREIGN KEY (author_id) REFERENCES author (id),
 );
+
 CREATE TABLE books(
-    id SERIAL PRIMARY KEY,
-    publisher VARCHAR(50) NOT NULL,
-    publish_date DATE NOT NULL,
-    cover_state VARCHAR(50) NOT NULL,
-    archived BOOLEAN,
-    label_id INT NOT NULL REFERENCES labels(id) ON DELETE CASCADE,
-    FOREIGN KEY (id) REFERENCES item (id) ON DELETE RESTRICT ON UPDATE CASCADE,
-    PRIMARY KEY(id)
+  id SERIAL PRIMARY KEY,
+  publish_date DATE NOT NULL,
+  archived BOOLEAN NOT NULL,
+  publisher VARCHAR(30) NOT NULL,
+  cover_state VARCHAR(10) NOT NULL,
+  label_ID INT,
+  author_ID INT,
+  genre_ID INT,
+  FOREIGN KEY (label_ID) REFERENCES label(ID),
+  FOREIGN KEY (author_ID) REFERENCES author(ID),
+  FOREIGN KEY(genre_ID) REFERENCES genre(ID)
 );
-CREATE TABLE labels(
+
+CREATE TABLE label(
     id SERIAL PRIMARY KEY,
     title VARCHAR(50) NOT NULL,
     color VARCHAR(50) NOT NULL,
-    PRIMARY KEY(id)
 );
+
 CREATE TABLE genre(
-    id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    name VARCHAR(255),
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL
 );
+
 CREATE TABLE music_album(
-    id INT NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    on_spotify BOOLEAN,
+  id SERIAL PRIMARY KEY,
+  type_of_item text,
+  author_id INTEGER,
+  source_id INTEGER,
+  on_spotify BOOLEAN,
+  publish_date DATE,
+  archived BOOLEAN,
+  label_id INT,
+  genre_id INT,
+  FOREIGN KEY (label_id) REFERENCES label(id),
+  FOREIGN KEY (genre_id) REFERENCES genre(id),
+  FOREIGN KEY (author_id) REFERENCES author(id),
+  FOREIGN KEY (source_id) REFERENCES source(id)
+);
 
 CREATE TABLE game (
     id SERIAL NOT NULL PRIMARY KEY,
